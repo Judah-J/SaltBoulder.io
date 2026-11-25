@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Brad Heap, Paolo Neville, and Ian Davidson, the people who lead the kitchen and dining room at SALT in Boulder.">
+  <title>Our Team | SALT Boulder</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <button class="nav-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation" hidden>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <a class="wordmark" href="SALT.html" aria-label="SALT home">SALT</a>
+      <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
+        <a href="menus.html">Menus</a>
+        <a href="private-dining.html">Private Dining</a>
+        <a href="visit.html">Visit</a>
+        <a class="mission-link" href="mission.html">SALT’s Mission</a>
+        <a href="team.html" aria-current="page">Team</a>
+      </nav>
+      <a class="button button-small reservation" href="https://www.opentable.com/r/salt-boulder">Reserve a Table</a>
+    </div>
+  </header>
+
+  <main id="main" class="team-page" tabindex="-1">
+    <h1 class="visually-hidden">Team</h1>
+    <img class="team-seal" src="assets/salt-field-seal.svg" alt="SALT, Boulder, Colorado, established 2008" width="280" height="280">
+    <section class="team-profiles wrap" aria-label="Team profiles">
+      <article class="feature team-profile" id="brad-heap" aria-labelledby="brad-name">
+        <img class="feature-image" src="assets/salt-team-brad-heap.jpg" alt="Brad Heap" width="220" height="220" fetchpriority="high">
+        <div class="feature-copy">
+          <p class="kicker">Chef, Owner &amp; Founder</p>
+          <h2 id="brad-name">Brad Heap</h2>
+          <p>Brad grew up in Boulder, learning to cook in his mother’s kitchen. He began working in restaurants at 13, graduated from the Culinary Institute of America, and apprenticed in France and Italy. A former partner at Full Moon Grill, he went on to found Colterra Food &amp; Wine and SALT.</p>
+          <p>His relationships with local growers and producers shape what’s on the menu. His favorite dish at SALT is the Vegetable Tasting.</p>
+        </div>
+      </article>
+
+      <article class="feature feature-reverse team-profile" id="paolo-neville" aria-labelledby="paolo-name">
+        <img class="feature-image" src="assets/salt-team-paolo-neville.jpg" alt="Paolo Neville" width="230" height="230" loading="lazy">
+        <div class="feature-copy">
+          <p class="kicker">Executive Chef</p>
+          <h2 id="paolo-name">Paolo Neville</h2>
+          <p>Paolo grew up on an organic farm outside Boulder. Over three decades in hospitality, his work has taken him through Mediterranean kitchens and Sonoma wine country, with time spent teaching, catering, and cooking for James Beard House dinners.</p>
+          <p>He leads SALT’s kitchen and builds seasonal menus around regional ingredients.</p>
+        </div>
+      </article>
+
+      <article class="feature team-profile" id="ian-davidson" aria-labelledby="ian-name">
+        <img class="feature-image" src="assets/salt-team-ian-davidson.jpg" alt="Ian Davidson" width="230" height="230" loading="lazy">
+        <div class="feature-copy">
+          <p class="kicker">General Manager</p>
+          <h2 id="ian-name">Ian Davidson</h2>
+          <p>Ian grew up in Boulder and returned in 2025. He has managed farm-to-table operations at Hana Ranch in Maui, Stone House in California, and Love Farms on Cape Cod.</p>
+          <p>At SALT, he brings that experience to the dining room and builds relationships with local farmers, ranchers, and businesses.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner wrap">
+      <a class="wordmark" href="SALT.html" aria-label="SALT home">SALT</a>
+      <address>1047 Pearl Street, Boulder, CO 80302<br><a href="tel:+13034447258">(303) 444-7258</a></address>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="visit.html">Hours &amp; Directions</a>
+        <a href="private-dining.html">Private Dining</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const profileObserver = new IntersectionObserver((entries, observer) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("team-profile-pending");
+            observer.unobserve(entry.target);
+          }
+        }
+      }, { threshold: 0.12 });
+
+      for (const profile of document.querySelectorAll(".team-profile")) {
+        profile.classList.add("team-profile-pending");
+        profileObserver.observe(profile);
+      }
+    }
+  </script>
+</body>
+</html>

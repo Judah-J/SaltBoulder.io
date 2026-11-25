@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 278">
+  <title>SALT Foothill Stamp</title>
+  <g fill="none" stroke="#fbefda" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="5" d="M196 19C229 18 260 26 285 44C308 61 321 77 329 107C336 132 330 166 317 188C306 208 291 223 267 236C245 248 223 260 195 259C165 258 138 245 117 228C97 211 80 197 73 174C65 147 65 122 72 102C80 79 94 59 116 43C138 27 163 21 196 19Z"/>
+    <path stroke-width="2" d="M100 142C123 138 139 124 153 110L179 85L216 121L231 108L269 140L302 140M155 117L179 85L182 104L195 108M217 121L231 108L238 122"/>
+    <path stroke-width="2" d="M102 148H299M139 211C156 219 178 224 199 224C222 224 244 218 260 210"/>
+    <path stroke-width="2.1" d="m233 63 10 10-10 10-10-10z"/>
+  </g>
+  <text x="200" y="194" fill="#fbefda" font-family="Georgia, 'Times New Roman', serif" font-size="53" font-weight="700" text-anchor="middle" letter-spacing="5">SALT</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <title>SALT Field Seal, established 2008</title>
+  <g fill="none" stroke="#fbefda" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="6.5" d="M140 14C172 12 201 26 224 46C249 67 262 103 264 137C267 167 254 201 232 225C209 251 175 265 141 265C107 269 77 253 52 231C27 210 13 178 15 145C12 110 24 81 46 55C67 30 104 14 140 14Z"/>
+    <path stroke-width="1.75" d="M34 102C48 60 89 30 137 29C183 27 229 54 246 100M33 177C51 220 92 252 139 250C187 251 227 221 246 177"/>
+    <path stroke-width="2.1" d="m140 52 9 11-9 11-9-11zM116 63h-7m62 0h-7"/>
+  </g>
+  <g fill="#fbefda" text-anchor="middle">
+    <text x="140" y="155" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="700" textLength="183" lengthAdjust="spacingAndGlyphs">SALT</text>
+    <text x="140" y="183" font-family="system-ui, sans-serif" font-size="14" font-weight="650" letter-spacing="2.6">BOULDER, CO</text>
+    <text x="140" y="213" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" letter-spacing="2">EST. 2008</text>
+  </g>
+</svg>

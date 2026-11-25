@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 278">
+  <title>SALT Pearl Street Wordmark</title>
+  <defs>
+    <path id="pearl-baseline" d="M19 181Q200 119 381 181"/>
+  </defs>
+  <g fill="none" stroke="#fbefda" stroke-linecap="round">
+    <g transform="translate(0 -25)">
+      <path stroke-width="2.65" d="M60 98C99 87 123 56 176 62M224 62C277 56 301 87 340 98M47 91C63 92 76 87 89 79M311 79C324 87 337 92 353 91"/>
+      <path stroke-width="1.55" d="M78 104C104 98 125 77 152 77M248 77C275 77 296 98 322 104"/>
+    </g>
+    <path stroke-width="2.5" d="M42 187C83 199 93 226 144 223M256 223C307 226 317 199 358 187"/>
+    <path stroke-width="1.55" d="M66 195C91 205 100 213 124 213M276 213C300 213 309 205 334 195"/>
+  </g>
+  <path fill="#fbefda" d="m200 29 5 8-5 8-5-8z"/>
+  <text fill="#fbefda" font-family="Georgia, 'Times New Roman', serif" font-size="115" font-weight="700" text-anchor="middle" textLength="257" lengthAdjust="spacingAndGlyphs"><textPath href="#pearl-baseline" startOffset="50%">SALT</textPath></text>
+  <text x="200" y="205" fill="#fbefda" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="3">PEARL STREET</text>
+</svg>

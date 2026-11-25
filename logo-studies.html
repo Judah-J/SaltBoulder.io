@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>SALT Logo Studies</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="logo-studies wrap">
+    <a class="text-link" href="SALT.html">Back to homepage</a>
+    <h1>SALT logo studies</h1>
+    <div class="logo-study-grid">
+      <figure class="logo-study">
+        <div class="logo-stage">
+          <img class="logo-motion logo-field" src="assets/salt-field-seal.svg" alt="Round SALT stamp with a diamond and curved lines, established 2008" width="280" height="280">
+        </div>
+        <figcaption>
+          <h2>Field Seal</h2>
+          <button class="logo-replay" type="button" aria-label="Replay Field Seal animation" hidden>Replay</button>
+          <p>Used on the homepage</p>
+        </figcaption>
+      </figure>
+      <figure class="logo-study">
+        <div class="logo-stage">
+          <img class="logo-motion logo-pearl" src="assets/salt-pearl-wordmark.svg" alt="An arched SALT wordmark with engraved flourishes and Pearl Street lettering" width="400" height="278">
+        </div>
+        <figcaption>
+          <h2>Pearl Street Wordmark</h2>
+          <button class="logo-replay" type="button" aria-label="Replay Pearl Street Wordmark animation" hidden>Replay</button>
+        </figcaption>
+      </figure>
+      <figure class="logo-study">
+        <div class="logo-stage">
+          <img class="logo-motion logo-foothills" src="assets/salt-foothill-stamp.svg" alt="A round SALT stamp with a mountain ridge and a diamond-shaped salt crystal" width="400" height="278">
+        </div>
+        <figcaption>
+          <h2>Foothill Stamp</h2>
+          <button class="logo-replay" type="button" aria-label="Replay Foothill Stamp animation" hidden>Replay</button>
+        </figcaption>
+      </figure>
+    </div>
+  </main>
+  <script>
+    for (const study of document.querySelectorAll(".logo-study")) {
+      const mark = study.querySelector(".logo-motion");
+      const replay = study.querySelector("button");
+      replay.hidden = false;
+
+      replay.addEventListener("click", () => {
+        mark.classList.remove("logo-motion");
+        // Commit the reset before adding the animation class again.
+        void mark.offsetWidth;
+        mark.classList.add("logo-motion");
+      });
+    }
+  </script>
+</body>
+</html>

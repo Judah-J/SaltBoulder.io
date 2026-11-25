@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare the SALT Cellar, the Studio, and the covered Garden Patio for your next private dinner or reception in Boulder.">
+  <title>Private Dining &amp; Events | SALT Boulder</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-nav.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <button class="nav-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation" hidden>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <a class="wordmark" href="index.html" aria-label="SALT home">SALT</a>
+      <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
+        <a href="menus.html">Menus</a>
+        <a href="private-dining.html" aria-current="page">Private Dining</a>
+        <a href="visit.html">Visit</a>
+        <a class="mission-link" href="mission.html">SALT’s Mission</a>
+        <a href="team.html">Team</a>
+      </nav>
+      <a class="button button-small reservation" href="https://www.opentable.com/r/salt-boulder">Reserve a Table</a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="venue-page wrap" aria-labelledby="venue-heading">
+      <div class="venue-intro">
+        <h1 id="venue-heading">Private Dining</h1>
+        <p>Choose a space for your dinner, reception, or celebration at SALT.</p>
+      </div>
+      <div class="venue-tabs" role="group" aria-label="Event spaces">
+        <a id="tab-cellar" href="#cellar">The Cellar</a>
+        <a id="tab-studio" href="#studio">The Studio</a>
+        <a id="tab-garden-patio" href="#garden-patio">Garden Patio</a>
+      </div>
+
+      <section class="page-hero venue-panel" id="cellar" aria-labelledby="cellar-heading">
+        <div class="page-hero-copy">
+          <h2 id="cellar-heading">The SALT Cellar</h2>
+          <p>Historic stone walls, glass chandeliers, and banquette seating frame this private dining room beneath Pearl Street, with a view into SALT’s wine cellar.</p>
+          <dl class="venue-capacities" aria-label="Guest capacity">
+            <div><dt>Seated</dt><dd>Up to 50</dd></div>
+            <div><dt>Standing</dt><dd>Up to 80</dd></div>
+          </dl>
+          <div class="actions">
+            <a class="button" href="https://app.perfectvenue.com/venues/salt-boulder/hello">Inquire</a>
+            <a class="text-link" href="private-dinner-menu.html">View Private Dinner Menu</a>
+          </div>
+        </div>
+        <img class="page-hero-image" src="assets/salt-cellar.jpg" alt="A candlelit table set for a private dinner in the SALT Cellar" width="1908" height="1200" fetchpriority="high">
+      </section>
+
+      <section class="page-hero venue-panel" id="studio" aria-labelledby="studio-heading">
+        <div class="page-hero-copy">
+          <h2 id="studio-heading">The Studio</h2>
+          <p>A bright second-floor gallery created in collaboration with local artist Artie Sandstone. The space is set up for standing gatherings and cocktail receptions.</p>
+          <dl class="venue-capacities" aria-label="Guest capacity">
+            <div><dt>Standing only</dt><dd>Up to 50</dd></div>
+          </dl>
+          <div class="actions">
+            <a class="button" href="https://app.perfectvenue.com/venues/salt-boulder/hello">Inquire</a>
+          </div>
+        </div>
+        <figure class="venue-photo">
+          <img class="page-hero-image" src="assets/salt-studio.jpg" alt="Cocktail tables set up among colorful artwork in the Studio" width="948" height="1014" loading="lazy">
+          <figcaption>Photo courtesy of Artie Sandstone</figcaption>
+        </figure>
+      </section>
+
+      <section class="page-hero venue-panel" id="garden-patio" aria-labelledby="patio-heading">
+        <div class="page-hero-copy">
+          <h2 id="patio-heading">Covered Garden Patio</h2>
+          <p>Host a seated dinner or cocktail reception outdoors under cover, surrounded by seasonal flowers and greenery.</p>
+          <dl class="venue-capacities" aria-label="Guest capacity">
+            <div><dt>Seated</dt><dd>Up to 30</dd></div>
+            <div><dt>Standing</dt><dd>Up to 50</dd></div>
+          </dl>
+          <div class="actions">
+            <a class="button" href="https://app.perfectvenue.com/venues/salt-boulder/hello">Inquire</a>
+            <a class="text-link" href="private-dinner-menu.html">View Private Dinner Menu</a>
+          </div>
+        </div>
+        <img class="page-hero-image" src="assets/salt-garden-patio.jpg" alt="Tables beneath the covered patio beside SALT’s brick wall and flowering plants" width="1350" height="1520" loading="lazy">
+      </section>
+    </section>
+
+    <section class="intro-note wrap" aria-labelledby="gather-heading">
+      <h2 id="gather-heading">Planning your event</h2>
+      <p>Share your preferred space, date, guest count, and any menu needs in your inquiry.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner wrap">
+      <a class="wordmark" href="index.html" aria-label="SALT home">SALT</a>
+      <address>1047 Pearl Street, Boulder, CO 80302<br><a href="tel:+13034447258">(303) 444-7258</a></address>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="visit.html">Hours &amp; Directions</a>
+        <a href="private-dining.html" aria-current="page">Private Dining</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const venueTabList = document.querySelector(".venue-tabs");
+    const venueTabs = [...venueTabList.querySelectorAll("a")];
+    const venuePanels = venueTabs.map(tab => document.getElementById(tab.hash.slice(1)));
+
+    function showVenue(activeIndex) {
+      venueTabs.forEach((tab, index) => {
+        const active = index === activeIndex;
+        tab.setAttribute("aria-selected", String(active));
+        tab.tabIndex = active ? 0 : -1;
+        venuePanels[index].hidden = !active;
+      });
+    }
+
+    function selectVenue(index) {
+      showVenue(index);
+      history.replaceState(history.state, "", venueTabs[index].hash);
+      venueTabs[index].focus();
+    }
+
+    function showVenueFromHash() {
+      showVenue(Math.max(0, venueTabs.findIndex(tab => tab.hash === location.hash)));
+    }
+
+    venueTabList.setAttribute("role", "tablist");
+    venueTabs.forEach((tab, index) => {
+      const panel = venuePanels[index];
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-controls", panel.id);
+      panel.setAttribute("role", "tabpanel");
+      panel.setAttribute("aria-labelledby", tab.id);
+      panel.tabIndex = 0;
+
+      tab.addEventListener("click", event => {
+        event.preventDefault();
+        selectVenue(index);
+      });
+
+      tab.addEventListener("keydown", event => {
+        let next;
+        switch (event.key) {
+          case "ArrowLeft": next = (index + venueTabs.length - 1) % venueTabs.length; break;
+          case "ArrowRight": next = (index + 1) % venueTabs.length; break;
+          case "Home": next = 0; break;
+          case "End": next = venueTabs.length - 1; break;
+          case " ": next = index; break;
+          default: return;
+        }
+        event.preventDefault();
+        selectVenue(next);
+      });
+    });
+
+    window.addEventListener("hashchange", showVenueFromHash);
+    showVenueFromHash();
+  </script>
+</body>
+</html>
