@@ -565,6 +565,18 @@ a.source-name { color: var(--brick-dark); text-underline-offset: .25em; }
   gap: 1.75rem 2rem;
 }
 
+@media (width > 65rem) {
+  .dine-in-menus .menu-groups {
+    display: block;
+    column-count: 2;
+    column-gap: 2rem;
+  }
+
+  .dine-in-menus .menu-group { break-inside: avoid; }
+  .dine-in-menus .menu-group + .menu-group { margin-block-start: 1.75rem; }
+  .dine-in-menus .menu-group:only-child { column-span: all; }
+}
+
 .menu-group h3 {
   margin-bottom: .4rem;
   color: var(--brick-dark);
