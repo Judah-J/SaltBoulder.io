@@ -31,18 +31,36 @@
 
   <main class="private-page" id="main" tabindex="-1">
     <section class="opener private-opener" aria-labelledby="venue-heading">
-      <picture>
-        <source media="(max-width: 43rem)" srcset="assets/salt-cellar-portrait.jpg" width="800" height="1200">
-        <img class="opener-photo" src="assets/salt-cellar-wide.jpg" alt="A table set beneath the chandeliers in the SALT Cellar" width="1200" height="800" fetchpriority="high">
-      </picture>
+      <div class="cellar-gallery" role="group" aria-label="SALT Cellar photo gallery" tabindex="0">
+        <div class="cellar-gallery-slide">
+          <picture>
+            <source media="(max-width: 43rem)" srcset="assets/salt-cellar-portrait.jpg" width="800" height="1200">
+            <img class="opener-photo" src="assets/salt-cellar-wide.jpg" alt="A table set beneath the chandeliers in the SALT Cellar" width="1200" height="800" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="cellar-gallery-slide">
+          <img class="opener-photo" src="assets/salt-cellar-banquette.jpg" alt="A long dinner table and banquette along the Cellar’s stone wall" width="1200" height="800" loading="lazy">
+        </div>
+        <div class="cellar-gallery-slide">
+          <img class="opener-photo" src="assets/salt-cellar-wine.jpg" alt="Wine bottles stored in the SALT Cellar" width="1200" height="800" loading="lazy">
+        </div>
+        <div class="cellar-gallery-slide">
+          <img class="opener-photo" src="assets/salt-cellar-cocktail.jpg" alt="A cocktail in a coupe glass on a wooden table at SALT" width="800" height="1200" loading="lazy">
+        </div>
+      </div>
       <div class="private-opener-copy wrap">
         <h1 id="venue-heading">Private Dining</h1>
         <p>Choose a space for your dinner, reception, or celebration at SALT.</p>
-        <a class="text-link" href="#event-spaces">View event spaces</a>
+      </div>
+      <div class="cellar-gallery-controls" role="group" aria-label="Cellar photo controls" hidden>
+        <button class="cellar-gallery-arrow" type="button" data-photo-step="-1" aria-label="Previous photo"></button>
+        <button class="cellar-gallery-arrow" type="button" data-photo-step="1" aria-label="Next photo"></button>
+        <div class="cellar-gallery-dots" aria-hidden="true"></div>
+        <span class="visually-hidden cellar-gallery-position" aria-live="polite" aria-atomic="true"></span>
       </div>
     </section>
 
-    <section class="venue-page wrap" id="event-spaces" tabindex="-1" aria-label="Event spaces">
+    <section class="venue-page wrap" aria-label="Event spaces">
       <div class="venue-tabs" role="group" aria-label="Event spaces">
         <a id="tab-cellar" href="#cellar">The Cellar</a>
         <a id="tab-studio" href="#studio">The Studio</a>
@@ -66,7 +84,7 @@
             <a class="text-link" href="private-dinner-menu.html">View Private Dinner Menu</a>
           </div>
         </div>
-        <img class="page-hero-image" src="assets/salt-cellar.jpg" alt="A candlelit table set for a private dinner in the SALT Cellar" width="1908" height="1200" loading="lazy">
+        <img class="page-hero-image" src="assets/salt-cellar-pasta.jpg" alt="A cook holds a sheet of fresh pasta in the SALT kitchen" width="1200" height="800" loading="lazy">
       </section>
 
       <section class="page-hero venue-panel" id="studio" aria-labelledby="studio-heading">
@@ -121,6 +139,46 @@
   </footer>
 
   <script>
+    const cellarGallery = document.querySelector(".cellar-gallery");
+    const galleryControls = document.querySelector(".cellar-gallery-controls");
+    const galleryPosition = galleryControls.querySelector(".cellar-gallery-position");
+    const galleryDots = Array.from(cellarGallery.children, () => document.createElement("span"));
+    const galleryLength = galleryDots.length;
+    galleryControls.querySelector(".cellar-gallery-dots").append(...galleryDots);
+
+    function currentGalleryPhoto() {
+      return Math.round(cellarGallery.scrollLeft / cellarGallery.clientWidth);
+    }
+
+    function moveGalleryPhoto(step) {
+      const current = currentGalleryPhoto();
+      const next = (current + step + galleryLength) % galleryLength;
+      cellarGallery.scrollTo({
+        left: next * cellarGallery.clientWidth,
+        behavior: Math.abs(next - current) > 1 ? "instant" : "auto"
+      });
+    }
+
+    galleryControls.querySelectorAll("button").forEach(button => {
+      button.addEventListener("click", () => moveGalleryPhoto(Number(button.dataset.photoStep)));
+    });
+    cellarGallery.addEventListener("keydown", event => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      moveGalleryPhoto(event.key === "ArrowLeft" ? -1 : 1);
+    });
+    function updateGalleryPosition() {
+      const current = currentGalleryPhoto();
+      const position = "Photo " + (current + 1) + " of " + galleryLength;
+      if (galleryPosition.textContent === position) return;
+      galleryPosition.textContent = position;
+      galleryDots.forEach((dot, index) => dot.classList.toggle("is-current", index === current));
+    }
+
+    cellarGallery.addEventListener("scroll", updateGalleryPosition, { passive: true });
+    updateGalleryPosition();
+    galleryControls.hidden = false;
+
     const venueTabList = document.querySelector(".venue-tabs");
     const venueTabs = [...venueTabList.querySelectorAll("a")];
     const venuePanels = venueTabs.map(tab => document.getElementById(tab.hash.slice(1)));
