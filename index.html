@@ -8,6 +8,7 @@
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <script src="site-nav.js" defer></script>
+  <script src="opener.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -92,22 +93,5 @@
       </nav>
     </div>
   </footer>
-
-  <script>
-    const opener = document.querySelector(".opener");
-    let lastProgress;
-
-    function updateOpener() {
-      const progress = Math.min(1, Math.max(0, window.scrollY / 160));
-      if (progress === lastProgress) return;
-      lastProgress = progress;
-
-      opener.style.setProperty("--photo-opacity", 0.8 + 0.2 * progress);
-      opener.style.setProperty("--photo-offset", `${16 * (1 - progress)}px`);
-    }
-
-    updateOpener();
-    window.addEventListener("scroll", updateOpener, { passive: true });
-  </script>
 </body>
 </html>

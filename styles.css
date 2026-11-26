@@ -374,9 +374,18 @@ h2 {
 .team-profile .feature-copy p + p { color: var(--team-text); }
 .team-profile .feature-copy p + p { margin-top: .8rem; }
 
-.venue-page { padding-top: clamp(2.5rem, 6vw, 5.5rem); }
-.venue-intro { margin-bottom: clamp(1.25rem, 4vw, 2.6rem); }
-.venue-intro p { margin-top: .8rem; color: var(--muted); }
+.private-page {
+  --rule: #cbbba8;
+  background: #eee5d7;
+}
+
+.private-menu-body {
+  max-width: 70rem;
+  padding-block: clamp(2rem, 5vw, 4.5rem);
+}
+
+.private-menu-body > .text-link { margin-bottom: 1.2rem; }
+.venue-page { padding-top: clamp(1.5rem, 4vw, 3.5rem); }
 
 .venue-tabs {
   display: flex;
@@ -404,6 +413,14 @@ h2 {
 
 .venue-panel { padding-block: clamp(1.6rem, 4vw, 3.3rem) clamp(2.5rem, 6vw, 5rem); }
 .venue-panel[hidden] { display: none; }
+
+.cellar-story {
+  max-width: 58ch;
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.cellar-story p + p { margin-top: .85rem; }
 
 .venue-capacities {
   display: flex;
@@ -735,6 +752,33 @@ a.source-name { color: var(--brick-dark); text-underline-offset: .25em; }
   filter: drop-shadow(0 2px 10px rgb(22 15 10 / .55));
 }
 
+.private-opener {
+  place-items: end stretch;
+  min-height: clamp(33rem, 83svh, 55rem);
+  padding: 8rem 0 clamp(2.75rem, 9vh, 6rem);
+}
+
+.private-opener > picture { position: absolute; inset: 0; }
+
+.private-opener::after {
+  background:
+    linear-gradient(to top, rgb(22 15 10 / .91), rgb(22 15 10 / .59) 33%, transparent 75%),
+    linear-gradient(to right, rgb(22 15 10 / .32), transparent 75%);
+}
+
+.private-opener-menu { min-height: clamp(30rem, 70svh, 46rem); }
+
+.private-opener-copy p {
+  max-width: 45ch;
+  margin-top: .85rem;
+  color: #f5e8d5;
+  font-size: clamp(1rem, 1.4vw, 1.175rem);
+}
+
+.private-opener-copy .text-link { margin-top: 1.05rem; color: inherit; }
+.private-opener-copy .text-link:hover { color: #f3cf9f; }
+.private-opener-copy :focus-visible { outline-color: #fbefda; }
+
 .contact-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr) auto;
@@ -864,6 +908,7 @@ a.source-name { color: var(--brick-dark); text-underline-offset: .25em; }
 
 @media (max-width: 43rem) {
   .opener-photo { object-position: 48% center; }
+  .private-opener-menu .opener-photo { object-position: 62% center; }
   .contact-inner { grid-template-columns: 1fr; align-items: start; }
   .contact-links { display: flex; flex-wrap: wrap; gap: .65rem 1.35rem; }
 }
